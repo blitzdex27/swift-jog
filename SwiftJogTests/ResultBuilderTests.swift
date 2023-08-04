@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import Swift_jog2
+@testable import SwiftJog
 
 class ResultBuilderTests: XCTestCase {
     
