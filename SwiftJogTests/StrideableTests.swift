@@ -10,23 +10,55 @@ import XCTest
 
 final class StrideableTests: XCTestCase {
 
-    func testOne() {
-        let p1 = Student(name: "p1")
-        let p2 = Student(name: "p2")
-        let p3 = Student(name: "p3")
-        let p4 = Student(name: "p4")
-        
+    func testStudnet() {
+        let s1 = Student(name: "Johnny", classification: .senior)
+        let s2 = Student(name: "Jenny", classification: .senior)
+        let s3 = Student(name: "Jiggy", classification: .senior)
+        let s4 = Student(name: "July", classification: .senior)
+        let s5 = Student(name: "Danny", classification: .junior)
+        let s6 = Student(name: "Denny", classification: .junior)
+        let s7 = Student(name: "Dinny", classification: .junior)
+        let s8 = Student(name: "Donny", classification: .junior)
 
-        let people = Array(p1...p4)
-
-        XCTAssertTrue(people[0] == p1)
-        XCTAssertTrue(people[1] == p2)
-        XCTAssertTrue(people[2] == p3)
-        XCTAssertTrue(people[3] == p4)
-    }
-    
-    func testTwo() {
         
+        let allStudents: StudentClosedRange<Student> = s1...s8
+        let juniorStudents = allStudents.filter { $0.classification == .junior }
+        let seniorStudents = allStudents.filter { $0.classification == .senior }
+        
+        for juniorStudent in juniorStudents {
+            XCTAssertTrue(juniorStudent.classification == .junior)
+        }
+        
+        for seniorStudent in seniorStudents {
+            XCTAssertTrue(seniorStudent.classification == .senior)
+        }
+        
+        let studentNames = (s1...s8).map { $0.name }
+        let expected = [
+            "Johnny",
+            "Jenny",
+            "Jiggy",
+            "July",
+            "Danny",
+            "Denny",
+            "Dinny",
+            "Donny",
+        ]
+        XCTAssertTrue(studentNames == expected)
+        
+        let studentsExceptLast: StudentRange<Student> = s1..<s8
+        let studentNamesExceptLast = studentsExceptLast.map { $0.name }
+        let expectedNames = [
+            "Johnny",
+            "Jenny",
+            "Jiggy",
+            "July",
+            "Danny",
+            "Denny",
+            "Dinny",
+        ]
+        XCTAssertTrue(studentNamesExceptLast == expectedNames)
+
     }
 
 }

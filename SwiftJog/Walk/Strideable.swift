@@ -7,16 +7,25 @@
 
 import Foundation
 
-struct Student {
-    static var students = [Student]()
-    
-    let name: String
-    let id: Int
+typealias StudentClosedRange<Bound> = ClosedRange<Bound> where Bound: Strideable, Bound.Stride == Int
+typealias StudentRange<Bound> = Range<Bound> where Bound: Strideable, Bound.Stride == Int
 
+enum StudentClassification {
+    case junior
+    case senior
+}
+struct Student {
+    private static var students = [Student]()
     
-    init(name: String) {
-        self.name = name
+    let id: Int
+    let name: String
+    let classification: StudentClassification
+    
+    
+    init(name: String, classification: StudentClassification) {
         self.id = Self.students.count + 1
+        self.name = name
+        self.classification = classification
         Self.students.append(self)
     }
 
@@ -40,7 +49,6 @@ extension Student: Strideable {
     }
     
     func advanced(by n: Int) -> Student {
-        print("\(n)")
         let id = self.id + n
         
         let student = Self.students.filter { p in
