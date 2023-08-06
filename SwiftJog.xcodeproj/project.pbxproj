@@ -11,6 +11,8 @@
 		343444AD2A7D4B4900E4BF3B /* ResultBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343444AC2A7D4B4900E4BF3B /* ResultBuilder.swift */; };
 		343444B12A7D4C2B00E4BF3B /* StringInterpolation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343444B02A7D4C2B00E4BF3B /* StringInterpolation.swift */; };
 		343444B32A7D4C4400E4BF3B /* StringInterpolationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343444B22A7D4C4400E4BF3B /* StringInterpolationTests.swift */; };
+		348665532A7FB304007AA1D9 /* StrideableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348665522A7FB304007AA1D9 /* StrideableTests.swift */; };
+		348665552A7FB389007AA1D9 /* Strideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348665542A7FB389007AA1D9 /* Strideable.swift */; };
 		34BBA7B42A70006100B5335E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BBA7B32A70006100B5335E /* AppDelegate.swift */; };
 		34BBA7B62A70006100B5335E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BBA7B52A70006100B5335E /* SceneDelegate.swift */; };
 		34BBA7B82A70006100B5335E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34BBA7B72A70006100B5335E /* ViewController.swift */; };
@@ -44,6 +46,8 @@
 		343444AC2A7D4B4900E4BF3B /* ResultBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultBuilder.swift; sourceTree = "<group>"; };
 		343444B02A7D4C2B00E4BF3B /* StringInterpolation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolation.swift; sourceTree = "<group>"; };
 		343444B22A7D4C4400E4BF3B /* StringInterpolationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolationTests.swift; sourceTree = "<group>"; };
+		348665522A7FB304007AA1D9 /* StrideableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrideableTests.swift; sourceTree = "<group>"; };
+		348665542A7FB389007AA1D9 /* Strideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strideable.swift; sourceTree = "<group>"; };
 		34BBA7B02A70006100B5335E /* SwiftJog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftJog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		34BBA7B32A70006100B5335E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		34BBA7B52A70006100B5335E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -122,6 +126,7 @@
 				34BBA7CE2A70026B00B5335E /* Singleton.swift */,
 				34BBA7E92A70126600B5335E /* CharacterBattle.swift */,
 				343444AC2A7D4B4900E4BF3B /* ResultBuilder.swift */,
+				348665542A7FB389007AA1D9 /* Strideable.swift */,
 			);
 			path = Walk;
 			sourceTree = "<group>";
@@ -143,6 +148,7 @@
 				34BBA7EB2A7012A300B5335E /* CharacterBattleTests.swift */,
 				34BBA7DF2A70029C00B5335E /* CustomOperatorsTests.swift */,
 				343444AA2A7D4B2E00E4BF3B /* ResultBuilderTests.swift */,
+				348665522A7FB304007AA1D9 /* StrideableTests.swift */,
 			);
 			path = SwiftJogTests;
 			sourceTree = "<group>";
@@ -264,6 +270,7 @@
 				34BBA7B82A70006100B5335E /* ViewController.swift in Sources */,
 				343444B12A7D4C2B00E4BF3B /* StringInterpolation.swift in Sources */,
 				34BBA7EE2A70190300B5335E /* Generics.swift in Sources */,
+				348665552A7FB389007AA1D9 /* Strideable.swift in Sources */,
 				34BBA7B42A70006100B5335E /* AppDelegate.swift in Sources */,
 				34BBA7CF2A70026B00B5335E /* CustomOperators.swift in Sources */,
 				343444AD2A7D4B4900E4BF3B /* ResultBuilder.swift in Sources */,
@@ -280,6 +287,7 @@
 			files = (
 				34BBA7E12A70029C00B5335E /* CustomOperatorsTests.swift in Sources */,
 				34BBA7EC2A7012A300B5335E /* CharacterBattleTests.swift in Sources */,
+				348665532A7FB304007AA1D9 /* StrideableTests.swift in Sources */,
 				343444AB2A7D4B2E00E4BF3B /* ResultBuilderTests.swift in Sources */,
 				34BBA7E02A70029C00B5335E /* SingletonTests.swift in Sources */,
 				34BBA7F02A70191400B5335E /* GenericsTests.swift in Sources */,
