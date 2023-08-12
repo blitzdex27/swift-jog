@@ -2,10 +2,11 @@
 //  PatternMatchingTests.swift
 //  SwiftJogTests
 //
-//  Created by Ss on 8/1/23.
+//  Created by Dexter Ramos on 8/1/23.
 //
 
 import XCTest
+@testable import SwiftJog
 
 /// Pattern Matching
 ///

@@ -93,7 +93,7 @@ class EncodeDecodeTests: XCTestCase {
         let employeeData = try! jsonEncoder.encode(employee)
 
         let employeeJson = String(data: employeeData, encoding: .utf8)!
-        let expectedEmployeeJson = #"{"first_name":"Dexter","department":"Tech"}"#
+        
         XCTAssertTrue(employeeJson.contains(#""first_name":"Dexter""#))
         XCTAssertTrue(employeeJson.contains(#""department":"Tech""#))
                                             
@@ -139,7 +139,6 @@ class EncodeDecodeTests: XCTestCase {
     }
     
     func testCustomEncodeWithMissing() {
-        let profile = Profile(language: "English")
         let employee = EmployeeV3(name: "Dexter", department: "Tech")
 
         let jsonEncoder = JSONEncoder()

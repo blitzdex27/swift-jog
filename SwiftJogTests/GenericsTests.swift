@@ -45,8 +45,6 @@ final class GenericsTests: XCTestCase {
         XCTAssertTrue(rectangle.length == 3)
         
         var rectangleStorage = ShapeStorage<Rectangle>()
-        XCTAssertTrue(rectangleStorage.container is [Rectangle])
-        
         rectangleStorage.push(shape: rectangle)
 
         // Tip: ShapeStorage below will only store Square type instances

@@ -12,12 +12,12 @@ final class StrideableTests: XCTestCase {
 
     func testStudnet() {
         let s1 = Student(name: "Johnny", classification: .senior)
-        let s2 = Student(name: "Jenny", classification: .senior)
-        let s3 = Student(name: "Jiggy", classification: .senior)
-        let s4 = Student(name: "July", classification: .senior)
-        let s5 = Student(name: "Danny", classification: .junior)
-        let s6 = Student(name: "Denny", classification: .junior)
-        let s7 = Student(name: "Dinny", classification: .junior)
+        _ = Student(name: "Jenny", classification: .senior)
+        _ = Student(name: "Jiggy", classification: .senior)
+        _ = Student(name: "July", classification: .senior)
+        _ = Student(name: "Danny", classification: .junior)
+        _ = Student(name: "Denny", classification: .junior)
+        _ = Student(name: "Dinny", classification: .junior)
         let s8 = Student(name: "Donny", classification: .junior)
 
         
