@@ -227,7 +227,7 @@ final class MemoryManagementTests: XCTestCase {
                 
                 
             }
-            
+
             author.writeClosure?()
         }
         /// RefCount: AuthorV3(name: "Dexter")=1
@@ -245,10 +245,30 @@ final class MemoryManagementTests: XCTestCase {
         /// - `strongAuthor` is holding the `AuthorV3(name: "Dexter")` instance strongly
         ///
         /// With that, shouldn't the closure owns the instance by now?
-        /// YES
+        /// - NO.
+        /// - The variable strongSelf does.
         ///
-        /// - if the variable is a struct, it will copy the value
-        /// - if the variable is a class, it will copy the reference
+        /// Why?
+        /// - Any variable you used inside a closure will be captured, specifically its instance
+        ///
+        /// What does it mean when we say the closure captured an instance?
+        /// - It means the "closure" will hold the instance strongly.
+        ///
+        /// What's the difference with using weak-strong dance?
+        /// - The outside variable's instance is referenced weakly by the closure.
+        ///
+        /// But the instance is now owned by the local variable inside the closure?!
+        /// - That's the trick to it. The **local variable strongly reference** the instance variable, not the closure.
+        /// - We know that a local variable's life is only within it's scope!
+        ///
+        /// But when a closure directly used the outside variable inside it's scope, it will capture the instance strongly, what is the difference then?
+        /// - The difference is that if you do this, the closure will automatically capture the instance strongly (e.g. [author] or [author = author])
+        /// - But if you do a weak-strong dance, you explicitly tell the closure to capture the variable weakly (e.g. [weak author] or [weak author = author]
+        /// - Then inside the closure's scope, a variable will hold the instance strongly
+        /// - **Since it is a variable inside a closure's scope, and not the closure itself, it's lifetime is only within the scope!**
+        ///
+        /// Summary:
+        /// - The instance is being held strongly by the local variable inside a closure, not by the closure!
     }
 }
 
