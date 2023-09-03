@@ -12,13 +12,13 @@ import XCTest
 ///
 final class MemoryManagementTests: XCTestCase {
     
-    override class func setUp() {
+    override func setUp() {
         Author.instanceCount = 0
         Book.instanceCount = 0
         AuthorV2.instanceCount = 0
         AuthorV3.instanceCount = 0
     }
-
+    
     func testStrongReference() {
         do {
             let author: Author
@@ -104,10 +104,10 @@ final class MemoryManagementTests: XCTestCase {
     
     func testClosureStrongReference() {
         do {
-            var author = AuthorV3(name: "Dexter") /// RefCounts: AuthorV3(name: "Dexter")=1
+            let author = AuthorV3(name: "Dexter") /// RefCounts: AuthorV3(name: "Dexter")=1
             precondition(AuthorV3.instanceCount == 1)
             do {
-                var book = Book(title: "Swift basics")
+                let book = Book(title: "Swift basics")
                 precondition(Book.instanceCount == 1) /// RefCounts: AuthorV3(name: "Dexter")=1; Book(title: "Swift basics")=1
                 
                 author.writeClosure = {
@@ -195,7 +195,7 @@ final class MemoryManagementTests: XCTestCase {
             
             XCTAssertTrue(AuthorV3.instanceCount == 1)
         }
-
+        
         XCTAssertTrue(AuthorV3.instanceCount == 0)
     }
     
@@ -210,9 +210,9 @@ final class MemoryManagementTests: XCTestCase {
             /// The author instance will not be destroyed until all strongAuthor accesses are executed in this closure
             author.writeClosure = { [weak author] in
                 guard let strongAuthor = author else { return } /// RefCount: AuthorV3(name: "Dexter")=2
-
+                
                 DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: DispatchWorkItem(block: {
-
+                    
                     expectAuthorInstanceExists.fulfill()
                     print("\(strongAuthor) instance is still alive!)")
                     
@@ -227,7 +227,7 @@ final class MemoryManagementTests: XCTestCase {
                 
                 
             }
-
+            
             author.writeClosure?()
         }
         /// RefCount: AuthorV3(name: "Dexter")=1
