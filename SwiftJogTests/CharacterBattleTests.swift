@@ -10,9 +10,9 @@ import XCTest
 
 final class CharacterBattleTests: XCTestCase {
 
-    let regexElf = { try Regex<AnyRegexOutput>("Elf") }
-    let regexGiant =  { try Regex<AnyRegexOutput>("Giant") }
-    let regexWizard = { try Regex<AnyRegexOutput>("Wizard") }
+    let regexElf = "Elf"
+    let regexGiant =  "Giant"
+    let regexWizard = "Wizard"
     
     let kStats_Elf = (hp: 3, atk: 10)
     let kStats_Wizard = (hp: 5, atk: 5)
@@ -32,10 +32,10 @@ final class CharacterBattleTests: XCTestCase {
     
     func testElf() throws {
         let elf = Elf()
-        
-        XCTAssert(elf.name.contains(try regexElf()))
-        XCTAssert(!elf.name.contains(try regexGiant()))
-        XCTAssert(!elf.name.contains(try regexWizard()))
+
+        XCTAssert(elf.name.contains(regexElf))
+        XCTAssert(!elf.name.contains(regexGiant))
+        XCTAssert(!elf.name.contains(regexWizard))
         
         XCTAssert(elf.hitPoints == kStats_Elf.hp)
         XCTAssert(elf.attackPoints == kStats_Elf.atk)
@@ -44,9 +44,9 @@ final class CharacterBattleTests: XCTestCase {
     func testWizard() throws {
         let wizard = Wizard()
         
-        XCTAssert(!wizard.name.contains(try regexElf()))
-        XCTAssert(!wizard.name.contains(try regexGiant()))
-        XCTAssert(wizard.name.contains(try regexWizard()))
+        XCTAssert(!wizard.name.contains(regexElf))
+        XCTAssert(!wizard.name.contains(regexGiant))
+        XCTAssert(wizard.name.contains(regexWizard))
         
         XCTAssert(wizard.hitPoints == kStats_Wizard.hp)
         XCTAssert(wizard.attackPoints == kStats_Wizard.atk)
@@ -55,9 +55,9 @@ final class CharacterBattleTests: XCTestCase {
     func testGiant() throws {
         let giant = Giant()
         
-        XCTAssert(!giant.name.contains(try regexElf()))
-        XCTAssert(giant.name.contains(try regexGiant()))
-        XCTAssert(!giant.name.contains(try regexWizard()))
+        XCTAssert(!giant.name.contains(regexElf))
+        XCTAssert(giant.name.contains(regexGiant))
+        XCTAssert(!giant.name.contains(regexWizard))
         
         XCTAssert(giant.hitPoints == kStats_Giant.hp)
         XCTAssert(giant.attackPoints == kStats_Giant.atk)
@@ -65,26 +65,26 @@ final class CharacterBattleTests: XCTestCase {
     
     func testGameFactory() throws {
         let elfFromFactory = GameCharacterFactory.make(ofType: .elf)
-        XCTAssert(elfFromFactory.name.contains(try regexElf()))
-        XCTAssert(!elfFromFactory.name.contains(try regexGiant()))
-        XCTAssert(!elfFromFactory.name.contains(try regexWizard()))
+        XCTAssert(elfFromFactory.name.contains(regexElf))
+        XCTAssert(!elfFromFactory.name.contains(regexGiant))
+        XCTAssert(!elfFromFactory.name.contains(regexWizard))
         
         XCTAssert(elfFromFactory.hitPoints == kStats_Elf.hp)
         XCTAssert(elfFromFactory.attackPoints == kStats_Elf.atk)
         
         let wizardFromFactory = GameCharacterFactory.make(ofType: .wizard)
-        XCTAssert(!wizardFromFactory.name.contains(try regexElf()))
-        XCTAssert(!wizardFromFactory.name.contains(try regexGiant()))
-        XCTAssert(wizardFromFactory.name.contains(try regexWizard()))
+        XCTAssert(!wizardFromFactory.name.contains(regexElf))
+        XCTAssert(!wizardFromFactory.name.contains(regexGiant))
+        XCTAssert(wizardFromFactory.name.contains(regexWizard))
         
         XCTAssert(wizardFromFactory.hitPoints == kStats_Wizard.hp)
         XCTAssert(wizardFromFactory.attackPoints == kStats_Wizard.atk)
         
         
         let giantFromFactory = GameCharacterFactory.make(ofType: .giant)
-        XCTAssert(!giantFromFactory.name.contains(try regexElf()))
-        XCTAssert(giantFromFactory.name.contains(try regexGiant()))
-        XCTAssert(!giantFromFactory.name.contains(try regexWizard()))
+        XCTAssert(!giantFromFactory.name.contains(regexElf))
+        XCTAssert(giantFromFactory.name.contains(regexGiant))
+        XCTAssert(!giantFromFactory.name.contains(regexWizard))
         
         XCTAssert(giantFromFactory.hitPoints == kStats_Giant.hp)
         XCTAssert(giantFromFactory.attackPoints == kStats_Giant.atk)
