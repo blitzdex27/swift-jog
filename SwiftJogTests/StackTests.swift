@@ -94,19 +94,19 @@ final class StackTests: XCTestCase {
         let thirdElement = stack.pop()
         XCTAssertTrue(stack.count == 2)
         XCTAssertTrue(stack.peek() == "Second element")
-        guard let thirdElement else { XCTFail(); return }
+        guard thirdElement != nil else { XCTFail(); return }
         XCTAssertTrue(thirdElement == "Third element")
         
         let secondElement = stack.pop()
         XCTAssertTrue(stack.count == 1)
         XCTAssertTrue(stack.peek() == "First element")
-        guard let secondElement else { XCTFail(); return }
+        guard secondElement != nil else { XCTFail(); return }
         XCTAssertTrue(secondElement == "Second element")
         
         let firstElement = stack.pop()
         XCTAssertTrue(stack.count == 0)
         XCTAssertTrue(stack.peek() == nil)
-        guard let firstElement else { XCTFail(); return }
+        guard firstElement != nil else { XCTFail(); return }
         XCTAssertTrue(firstElement == "First element")
     }
     
