@@ -179,3 +179,35 @@ struct GenericVehicleToyBuilderRobot<ToyType: VehicleToy>: VehicleToyBuilderRobo
     var assemblySpeed: Double
     
 }
+
+
+// Challenge 2
+struct TrainToy: VehicleToy {
+    var price: Double = 100
+    static let pieceCount: Int = 75
+}
+
+struct ToyTrainBuilderRobot: VehicleToyBuilderRobot {
+    typealias VehicleToyType = TrainToy
+    
+    var assemblySpeed: Double = 500
+    
+}
+
+func makeToyBuilderRobot() -> some VehicleToyBuilderRobot {
+    return ToyTrainBuilderRobot()
+}
+
+// Challenge 3
+
+struct MonsterTruckToy: VehicleToy {
+    var price: Double = 100
+    static let pieceCount: Int = 120
+}
+
+struct ToyMonsterBuilderRobot: VehicleToyBuilderRobot {
+    typealias VehicleToyType = TrainToy
+    
+    var assemblySpeed: Double = 200
+    
+}

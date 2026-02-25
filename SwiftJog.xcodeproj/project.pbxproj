@@ -13,6 +13,8 @@
 		343444B32A7D4C4400E4BF3B /* StringInterpolationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 343444B22A7D4C4400E4BF3B /* StringInterpolationTests.swift */; };
 		344098FC2A8130110023C02E /* PatternMatching.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344098FB2A8130110023C02E /* PatternMatching.swift */; };
 		344098FE2A8130250023C02E /* PatternMatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 344098FD2A8130250023C02E /* PatternMatchingTests.swift */; };
+		3453EF872AA60903008C721E /* ConcurrencyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453EF862AA60903008C721E /* ConcurrencyTests.swift */; };
+		3453EF892AA60934008C721E /* Concurrency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3453EF882AA60934008C721E /* Concurrency.swift */; };
 		348665532A7FB304007AA1D9 /* StrideableTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348665522A7FB304007AA1D9 /* StrideableTests.swift */; };
 		348665552A7FB389007AA1D9 /* Strideable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348665542A7FB389007AA1D9 /* Strideable.swift */; };
 		348695B42A8745C2004DCC2B /* EncodeDecodeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 348695B32A8745C2004DCC2B /* EncodeDecodeTests.swift */; };
@@ -60,6 +62,8 @@
 		343444B22A7D4C4400E4BF3B /* StringInterpolationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringInterpolationTests.swift; sourceTree = "<group>"; };
 		344098FB2A8130110023C02E /* PatternMatching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatching.swift; sourceTree = "<group>"; };
 		344098FD2A8130250023C02E /* PatternMatchingTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PatternMatchingTests.swift; sourceTree = "<group>"; };
+		3453EF862AA60903008C721E /* ConcurrencyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConcurrencyTests.swift; sourceTree = "<group>"; };
+		3453EF882AA60934008C721E /* Concurrency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Concurrency.swift; sourceTree = "<group>"; };
 		348665522A7FB304007AA1D9 /* StrideableTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StrideableTests.swift; sourceTree = "<group>"; };
 		348665542A7FB389007AA1D9 /* Strideable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Strideable.swift; sourceTree = "<group>"; };
 		348695B32A8745C2004DCC2B /* EncodeDecodeTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EncodeDecodeTests.swift; sourceTree = "<group>"; };
@@ -157,6 +161,7 @@
 				348695BD2A876010004DCC2B /* MemoryManagement.swift */,
 				34A197A62AA30BA800812498 /* PropertyWrapper.swift */,
 				34A197A82AA37CF600812498 /* ProtocolOrientedProgramming.swift */,
+				3453EF882AA60934008C721E /* Concurrency.swift */,
 			);
 			path = Walk;
 			sourceTree = "<group>";
@@ -185,6 +190,7 @@
 				348695BB2A875FB7004DCC2B /* MemoryManagementTests.swift */,
 				34A197A42AA30B9800812498 /* PropertyWrapperTests.swift */,
 				34A197AA2AA37D3C00812498 /* ProtocolOrientedProgrammingTests.swift */,
+				3453EF862AA60903008C721E /* ConcurrencyTests.swift */,
 			);
 			path = SwiftJogTests;
 			sourceTree = "<group>";
@@ -316,6 +322,7 @@
 				343444AD2A7D4B4900E4BF3B /* ResultBuilder.swift in Sources */,
 				34BBA7D02A70026B00B5335E /* Singleton.swift in Sources */,
 				348695BA2A874C7D004DCC2B /* ErrorHandling.swift in Sources */,
+				3453EF892AA60934008C721E /* Concurrency.swift in Sources */,
 				34BBA7EA2A70126600B5335E /* CharacterBattle.swift in Sources */,
 				34BBA7E42A7004B300B5335E /* Stack.swift in Sources */,
 				348695B62A8745EF004DCC2B /* EncodeDecode.swift in Sources */,
@@ -334,6 +341,7 @@
 				348695B82A874C6A004DCC2B /* ErrorHandlingTests.swift in Sources */,
 				348695BC2A875FB7004DCC2B /* MemoryManagementTests.swift in Sources */,
 				348665532A7FB304007AA1D9 /* StrideableTests.swift in Sources */,
+				3453EF872AA60903008C721E /* ConcurrencyTests.swift in Sources */,
 				348695B42A8745C2004DCC2B /* EncodeDecodeTests.swift in Sources */,
 				343444AB2A7D4B2E00E4BF3B /* ResultBuilderTests.swift in Sources */,
 				34BBA7E02A70029C00B5335E /* SingletonTests.swift in Sources */,

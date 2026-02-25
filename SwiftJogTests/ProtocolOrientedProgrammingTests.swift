@@ -70,4 +70,13 @@ final class ProtocolOrientedProgramming: XCTestCase {
         XCTAssertTrue(setBTruckToys.count == 100)
         
     } /// Reference: Swift Apprentice (raywenderlich.com) chapter 28 Advanced Protocols & Generics, page 532
+    
+    /// Challenge 2: Toy train builder
+    /// Declare a function that constructs robots that make toy trains.
+    /// - A train has 75 Pieces.
+    /// - A train robot can assemble 500 pieces per minute.
+    /// - Use an opaque return type to hide the type of robot you return.
+    func testToyTrainBuilder() {
+
+    }
 }
